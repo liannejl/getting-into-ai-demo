@@ -39,6 +39,8 @@ Per `docs/planning.md`, the agent follows this flow:
 - Always use the local `.venv` when running Python — the project dependencies are installed there, not globally. Activate with `source .venv/bin/activate` or invoke directly via `.venv/bin/python main.py`.
 - `uvx` must be installed (`brew install uv`) for the Reddit MCP server to launch. The agent hardcodes the path to `/usr/local/bin/uvx` (Homebrew default on Intel Mac). Override with `UVX_PATH=/path/to/uvx` in `.env` if needed.
 - We are using Langfuse v4 SDK, which has had many breaking changes from previous versions. Always check most up-to-date documentation before writing Langfuse code
+- ALWAYS check the actual function names and implementation for SDKs and integrations, like MCP servers. 
+NEVER assume you know what the usage looks like in the code.
 
 ## MCP Servers
 

@@ -1,4 +1,7 @@
 anthropic
 langfuse
+streamlit
 python-dotenv
 mcp
+pytest
+pytest-asyncio

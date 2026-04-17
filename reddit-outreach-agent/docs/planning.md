@@ -26,5 +26,8 @@ a proposed tech stack:
 
 some basic requirements: 
 - make sure to skip NSFW Reddit content
+- setup tests to verify your work as you go. use test-driven development. write tests first before coding
+  - make sure to test all integrations and SDK usages to make sure they align with the version of SDK we have installed
 
-help me come up with an architecture & implementation plan for my approval before starting to code
+help me come up with an architecture & implementation plan for my approval before starting to code. 
+write the plan into docs/implementation.md
