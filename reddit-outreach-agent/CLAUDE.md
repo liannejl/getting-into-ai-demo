@@ -21,7 +21,7 @@ Required `.env` variables:
 ## Running
 
 ```bash
-python main.py
+streamlit run main.py
 ```
 
 ## Architecture
@@ -37,7 +37,9 @@ Per `docs/planning.md`, the agent follows this flow:
 ## Gotchas
 
 - Always use the local `.venv` when running Python — the project dependencies are installed there, not globally. Activate with `source .venv/bin/activate` or invoke directly via `.venv/bin/python main.py`.
+- `uvx` must be installed (`brew install uv`) for the Reddit MCP server to launch. The agent hardcodes the path to `/usr/local/bin/uvx` (Homebrew default on Intel Mac). Override with `UVX_PATH=/path/to/uvx` in `.env` if needed.
+- We are using Langfuse v4 SDK, which has had many breaking changes from previous versions. Always check most up-to-date documentation before writing Langfuse code
 
 ## MCP Servers
 
-`.mcp.json` configures the Langfuse docs MCP server (HTTP) for looking up Langfuse tracing APIs during development. A Reddit MCP server needs to be added here for Reddit interactions.
+`.mcp.json` configures the Langfuse docs MCP server (HTTP) for looking up Langfuse tracing APIs during development. The Reddit MCP server (`mcp-server-reddit`) is launched as a subprocess via `uvx` inside `agent.py` — it is not configured in `.mcp.json`.

@@ -24,4 +24,7 @@ a proposed tech stack:
   - Langfuse for tracing and evaluation
   - simple UI to see streaming
 
+some basic requirements: 
+- make sure to skip NSFW Reddit content
+
 help me come up with an architecture & implementation plan for my approval before starting to code
